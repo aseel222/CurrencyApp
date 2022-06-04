@@ -173,7 +173,6 @@ class MainActivity : AppCompatActivity() {
                 amount=="1"
                 return@setOnClickListener
             }
-            Toast.makeText(this,tovalue+""+fromvalue,Toast.LENGTH_SHORT).show()
 
 
             convertcurrencyviewmodel.getconvertedvalue("sfJL0bweJcWqlZlYLDpADkiaruvw4SIK",amount,tovalue,fromvalue)
