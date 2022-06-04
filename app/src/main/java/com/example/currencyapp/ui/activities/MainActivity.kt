@@ -166,6 +166,14 @@ class MainActivity : AppCompatActivity() {
             var index2=currencykeys.indexOf(value2)
             binding.toDropdown.setSelection(index)
             binding.fromDropdown.setSelection(index2)
+            amount=binding.fromEtxt.text.toString()
+            if(amount.isEmpty()){
+                amount=="1"
+                return@setOnClickListener
+            }
+
+            convertcurrencyviewmodel.getconvertedvalue("Tcci5REFyKKzYJXIxRuaKuhKr3FfmpP7",amount,fromvalue,tovalue)
+
 
         }
 
