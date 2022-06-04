@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         currencykeys= ArrayList()
 
-        sympolsviewmodel.getsympols("Tcci5REFyKKzYJXIxRuaKuhKr3FfmpP7")
+        sympolsviewmodel.getsympols("sfJL0bweJcWqlZlYLDpADkiaruvw4SIK")
         observesympolse()
 
 
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                         return
 
                     }
-                    convertcurrencyviewmodel.getconvertedvalue("Tcci5REFyKKzYJXIxRuaKuhKr3FfmpP7",amount,fromvalue,tovalue)
+                    convertcurrencyviewmodel.getconvertedvalue("sfJL0bweJcWqlZlYLDpADkiaruvw4SIK",amount,fromvalue,tovalue)
 
                 }
 
@@ -156,6 +156,7 @@ class MainActivity : AppCompatActivity() {
 
         })
         binding.swapBtn.setOnClickListener {
+
             var value2=currencykeys.singleOrNull {
                 it.value==selection2
             }
@@ -166,13 +167,16 @@ class MainActivity : AppCompatActivity() {
             var index2=currencykeys.indexOf(value2)
             binding.toDropdown.setSelection(index)
             binding.fromDropdown.setSelection(index2)
+
             amount=binding.fromEtxt.text.toString()
             if(amount.isEmpty()){
                 amount=="1"
                 return@setOnClickListener
             }
+            Toast.makeText(this,tovalue+""+fromvalue,Toast.LENGTH_SHORT).show()
 
-            convertcurrencyviewmodel.getconvertedvalue("Tcci5REFyKKzYJXIxRuaKuhKr3FfmpP7",amount,fromvalue,tovalue)
+
+            convertcurrencyviewmodel.getconvertedvalue("sfJL0bweJcWqlZlYLDpADkiaruvw4SIK",amount,tovalue,fromvalue)
 
 
         }
